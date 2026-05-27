@@ -1,0 +1,1005 @@
+/* RESET + БАЗОВЫЕ СТИЛИ (мобильная основа) */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+ 
+body {
+  background-color: #ffffff;
+  background-image: url('fon.jpg');
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  font-family: 'Cormorant Garamond', 'Playfair Display', Georgia, 'Times New Roman', serif;
+  line-height: 1.4;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
+}
+
+/* Hero секция — прозрачный фон */
+.hero {
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem 1.5rem;
+  overflow-x: hidden;
+  position: relative;
+  z-index: 1;
+}
+
+/* контейнер hero — центрирование */
+.hero-container {
+  max-width: 480px;
+  width: 100%;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Блок с именами НАД фото */
+.hero-names-above {
+  text-align: center;
+  margin-bottom: 1.5rem;
+  width: 100%;
+  display: flex;
+  align-items: baseline;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.name {
+  font-family: 'Playfair Display', 'Cormorant Garamond', serif;
+  font-weight: 300;
+  font-size: clamp(2.2rem, 8vw, 3.5rem);
+  letter-spacing: 0.03em;
+  color: #2c2c2c;
+  display: inline-block;
+}
+
+.name-pavel {
+  font-weight: 300;
+  font-style: normal;
+}
+
+.name-arina {
+  font-weight: 300;
+  font-style: normal;
+}
+
+.name-ampersand {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(1.8rem, 6vw, 2.8rem);
+  font-weight: 400;
+  color: #b8a99a;
+  font-style: italic;
+  display: inline-block;
+  margin: 0 0.2rem;
+}
+
+/* квадратный wrapper для фото */
+.hero-photo-wrapper {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  max-width: 400px;
+  margin: 0 auto;
+  overflow: hidden;
+  background-color: #f8f6f4;
+  box-shadow: none;
+  min-height: 200px;
+}
+
+/* само фото */
+.hero-photo {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* блок даты под фото */
+.hero-date {
+  margin-top: 1.8rem;
+  text-align: center;
+  width: 100%;
+}
+
+.date-number {
+  font-family: 'Playfair Display', 'Cormorant Garamond', serif;
+  font-size: clamp(1.6rem, 7vw, 2.6rem);
+  font-weight: 500;
+  color: #7a6a5c;
+  letter-spacing: 0.1em;
+  display: inline-block;
+  padding: 0.2rem 0.4rem;
+  background: transparent;
+  font-feature-settings: "tnum";
+  font-variant-numeric: tabular-nums;
+  border-bottom: 1px solid #e2dcd5;
+}
+
+/* адаптация для маленьких экранов */
+@media (max-width: 420px) {
+  .hero {
+    padding: 1.5rem 1rem;
+  }
+  
+  .hero-names-above {
+    margin-bottom: 1rem;
+    gap: 0.3rem;
+  }
+  
+  .name-ampersand {
+    margin: 0 0.1rem;
+  }
+  
+  .hero-date {
+    margin-top: 1.2rem;
+  }
+}
+
+/* для экранов высотой менее 600px */
+@media (max-height: 700px) {
+  .hero {
+    min-height: auto;
+    padding: 2rem 1rem;
+  }
+  
+  .hero-names-above {
+    margin-bottom: 0.8rem;
+  }
+  
+  .hero-date {
+    margin-top: 1rem;
+  }
+}
+
+/* если фото не загрузилось */
+.hero-photo-wrapper:has(img[src=""]) {
+  background: #f0ede8;
+}
+
+/* ВТОРАЯ СЕКЦИЯ — фото под наклоном */
+.tilted-section {
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+  overflow-x: hidden;
+}
+
+.tilted-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  overflow: hidden;
+  padding: 0;
+}
+
+/* Заголовок SAVE THE DATE */
+.save-the-date {
+  font-family: 'Playfair Display', 'Cormorant Garamond', serif;
+  font-size: clamp(1.5rem, 5vw, 2rem);
+  font-weight: 400;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  color: #7a6a5c;
+  text-align: center;
+  margin-bottom: 2rem;
+  word-spacing: 0.2em;
+}
+
+/* Обёртка для фото — здесь применяется поворот */
+.tilted-photo-wrapper {
+  display: block;
+  transform: rotate(12deg);
+}
+
+/* Само фото */
+.tilted-photo {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* Адаптация для мобильных */
+@media (max-width: 600px) {
+  .tilted-section {
+    padding: 1rem;
+  }
+  
+  .tilted-container {
+    overflow: visible;
+  }
+  
+  .tilted-photo-wrapper {
+    transform: rotate(8deg);
+    width: 100%;
+  }
+  
+  .tilted-photo {
+    width: 100%;
+    margin: 0 auto;
+  }
+  
+  .save-the-date {
+    letter-spacing: 0.5em;
+    margin-bottom: 1.5rem;
+  }
+}
+
+/* Для очень маленьких экранов */
+@media (max-width: 380px) {
+  .tilted-photo-wrapper {
+    transform: rotate(6deg);
+  }
+}
+
+/* ========== КАЛЕНДАРЬ ========== */
+.calendar {
+  background: transparent;
+  border-radius: 0;
+  padding: 1rem;
+  width: 95%;
+  max-width: 400px;
+  margin-top: 2rem;
+  text-align: center;
+  box-shadow: none;
+}
+
+.calendar-header {
+  background: transparent;
+  color: #7a6a5c;
+  padding: 1rem;
+  margin-bottom: 1.2rem;
+  font-family: 'Playfair Display', serif;
+  border-bottom: 1px solid #e2dcd5;
+}
+
+.calendar-month {
+  font-size: 1.6rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  margin-right: 0.5rem;
+  color: #2c2c2c;
+}
+
+.calendar-year {
+  font-size: 1.4rem;
+  font-weight: 400;
+  color: #7a6a5c;
+}
+
+.calendar-weekdays {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 0.5rem;
+  margin-bottom: 0.8rem;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: #7a6a5c;
+  font-family: 'Cormorant Garamond', serif;
+}
+
+.calendar-weekdays span {
+  padding: 0.4rem;
+}
+
+.calendar-days {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 0.5rem;
+  font-size: 1.1rem;
+  font-family: 'Cormorant Garamond', serif;
+}
+
+.calendar-days span {
+  padding: 0.7rem 0;
+  color: #2c2c2c;
+  background: transparent;
+}
+
+/* Выделенная дата 1 августа */
+.calendar-days span:nth-child(6) {
+  background-color: #b8a99a;
+  color: white;
+  font-weight: 600;
+  border-radius: 50%;
+  width: 38px;
+  height: 38px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto;
+  line-height: 1;
+}
+
+/* Адаптация для мобильных */
+@media (max-width: 600px) {
+  .calendar {
+    width: 90%;
+    max-width: 350px;
+    padding: 0.8rem;
+    margin-top: 1.8rem;
+  }
+  
+  .calendar-month {
+    font-size: 1.4rem;
+  }
+  
+  .calendar-year {
+    font-size: 1.2rem;
+  }
+  
+  .calendar-days {
+    gap: 0.4rem;
+    font-size: 1rem;
+  }
+  
+  .calendar-days span {
+    padding: 0.5rem 0;
+  }
+  
+  .calendar-days span:nth-child(6) {
+    width: 34px;
+    height: 34px;
+  }
+  
+  .calendar-weekdays {
+    gap: 0.4rem;
+    font-size: 0.75rem;
+  }
+}
+
+/* Для очень маленьких экранов */
+@media (max-width: 380px) {
+  .calendar {
+    max-width: 300px;
+  }
+  
+  .calendar-days {
+    gap: 0.3rem;
+    font-size: 0.9rem;
+  }
+  
+  .calendar-days span:nth-child(6) {
+    width: 30px;
+    height: 30px;
+  }
+  
+  .calendar-month {
+    font-size: 1.2rem;
+  }
+  
+  .calendar-year {
+    font-size: 1rem;
+  }
+}
+
+/* Фикс проблемы со скроллом на мобильных */
+html, body {
+  height: 100%;
+  -webkit-overflow-scrolling: touch;
+}
+
+body {
+  position: relative;
+  min-height: 100%;
+}
+
+main {
+  display: block;
+  width: 100%;
+  overflow-x: hidden;
+}
+
+
+/* ========== ТРЕТЬЯ СЕКЦИЯ: TIMING ========== */
+.timing-section {
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem 1rem;
+  overflow-x: hidden;
+}
+
+.timing-container {
+  max-width: 600px;
+  width: 100%;
+  margin: 0 auto;
+}
+
+.timing-title {
+  font-family: 'Playfair Display', 'Cormorant Garamond', serif;
+  font-size: 2.5rem;
+  font-weight: 400;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  color: #7a6a5c;
+  text-align: center;
+  margin-bottom: 3rem;
+  word-spacing: 0.2em;
+}
+
+/* Каждая строка */
+.timing-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1.5rem;
+  margin-bottom: 2.5rem;
+  padding-bottom: 1.5rem;
+  border-bottom: 1px solid rgba(226, 220, 213, 0.5);
+}
+
+/* Левая часть: время и событие (вертикально) */
+.timing-schedule {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.timing-time {
+  font-family: 'Playfair Display', serif;
+  font-size: 3rem;
+  font-weight: 600;
+  color: #b8a99a;
+  letter-spacing: 0.05em;
+  line-height: 1.1;
+}
+
+.timing-event {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.3rem;
+  font-weight: 500;
+  color: #2c2c2c;
+  line-height: 1.3;
+}
+
+/* Правая часть: фото */
+.timing-photo-wrapper {
+  width: 120px;
+  flex-shrink: 0;
+}
+
+.timing-photo {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 16px;
+}
+
+/* Адаптация для мобильных */
+@media (max-width: 600px) {
+  .timing-section {
+    padding: 2rem 1rem;
+  }
+  
+  .timing-title {
+    font-size: 2rem;
+    margin-bottom: 2.5rem;
+  }
+  
+  .timing-row {
+    gap: 1.5rem;
+    margin-bottom: 2rem;
+    padding-bottom: 1.5rem;
+  }
+  
+  .timing-time {
+    font-size: 2.8rem;
+  }
+  
+  .timing-event {
+    font-size: 1.2rem;
+  }
+  
+  .timing-photo-wrapper {
+    width: 110px;
+  }
+}
+
+/* Для очень маленьких экранов */
+@media (max-width: 480px) {
+  .timing-time {
+    font-size: 2.5rem;
+  }
+  
+  .timing-event {
+    font-size: 1.1rem;
+  }
+  
+  .timing-photo-wrapper {
+    width: 95px;
+  }
+  
+  .timing-row {
+    gap: 1rem;
+  }
+}
+
+
+/* ========== ЧЕТВЁРТАЯ СЕКЦИЯ: WISHES ========== */
+.wishes-section {
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 3rem 1.5rem;
+  overflow-x: hidden;
+}
+
+.wishes-container {
+  max-width: 600px;
+  width: 100%;
+  margin: 0 auto;
+}
+
+.wishes-title {
+  font-family: 'Playfair Display', 'Cormorant Garamond', serif;
+  font-size: 2.5rem;
+  font-weight: 400;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  color: #7a6a5c;
+  text-align: center;
+  margin-bottom: 3rem;
+  word-spacing: 0.2em;
+}
+
+.wishes-text {
+  margin-bottom: 2rem;
+  text-align: center;
+}
+
+.wishes-text p {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.2rem;
+  font-weight: 400;
+  color: #2c2c2c;
+  line-height: 1.5;
+}
+
+/* Стили для первого блока (самый ценный подарок) */
+.wishes-text-first p {
+  font-size: 1.4rem;
+  font-weight: 500;
+  color: #b8a99a;
+  font-style: italic;
+}
+
+/* Стили для второго блока (подарки в конвертах) */
+.wishes-text-second p {
+  font-size: 1.2rem;
+}
+
+/* Стили для третьего блока (без детей) */
+.wishes-text-third p {
+  font-size: 1.2rem;
+}
+
+/* Адаптация для мобильных */
+@media (max-width: 600px) {
+  .wishes-section {
+    padding: 2rem 1rem;
+  }
+  
+  .wishes-title {
+    font-size: 2rem;
+    margin-bottom: 2rem;
+  }
+  
+  .wishes-text-first p {
+    font-size: 1.3rem;
+  }
+  
+  .wishes-text-second p {
+    font-size: 1.1rem;
+  }
+  
+  .wishes-text-third p {
+    font-size: 1.1rem;
+  }
+  
+  .wishes-text {
+    margin-bottom: 1.5rem;
+  }
+}
+
+/* Для очень маленьких экранов */
+@media (max-width: 380px) {
+  .wishes-title {
+    font-size: 1.8rem;
+  }
+  
+  .wishes-text-first p {
+    font-size: 1.2rem;
+  }
+  
+  .wishes-text-second p,
+  .wishes-text-third p {
+    font-size: 1rem;
+  }
+}
+
+
+/* ========== ПЯТАЯ СЕКЦИЯ: DRESS-CODE ========== */
+.dresscode-section {
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 3rem 1.5rem;
+  overflow-x: hidden;
+}
+
+.dresscode-container {
+  max-width: 600px;
+  width: 100%;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.dresscode-title {
+  font-family: 'Playfair Display', 'Cormorant Garamond', serif;
+  font-size: 2.5rem;
+  font-weight: 400;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  color: #7a6a5c;
+  text-align: center;
+  margin-bottom: 2rem;
+  word-spacing: 0.2em;
+}
+
+.dresscode-text {
+  margin-bottom: 2.5rem;
+}
+
+.dresscode-text p {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.2rem;
+  font-weight: 400;
+  color: #2c2c2c;
+  line-height: 1.5;
+}
+
+/* Кружки с цветами */
+.dresscode-colors {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1.2rem;
+}
+
+.color-circle {
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  transition: transform 0.3s ease;
+}
+
+.color-circle:hover {
+  transform: scale(1.1);
+}
+
+/* Нежные цвета для свадьбы */
+.color-1 {
+  background-color: #f5e6e8; /* нежно-розовый */
+  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+}
+
+.color-2 {
+  background-color: #e8d5c4; /* шампань */
+  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+}
+
+.color-3 {
+  background-color: #d4e0d8; /* мята */
+  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+}
+
+.color-4 {
+  background-color: #faf0e6; /* слоновая кость */
+  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+}
+
+.color-5 {
+  background-color: #e2dcd5; /* бежевый */
+  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+}
+
+.color-6 {
+  background-color: #c9b6a8; /* пудровый */
+  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+}
+
+.color-7 {
+  background-color: #b8d4c7; /* бледно-зеленый */
+  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+}
+
+/* Адаптация для мобильных */
+@media (max-width: 600px) {
+  .dresscode-section {
+    padding: 2rem 1rem;
+  }
+  
+  .dresscode-title {
+    font-size: 2rem;
+    margin-bottom: 1.5rem;
+  }
+  
+  .dresscode-text p {
+    font-size: 1.1rem;
+  }
+  
+  .color-circle {
+    width: 55px;
+    height: 55px;
+  }
+  
+  .dresscode-colors {
+    gap: 1rem;
+  }
+}
+
+/* Для очень маленьких экранов */
+@media (max-width: 380px) {
+  .dresscode-title {
+    font-size: 1.8rem;
+  }
+  
+  .dresscode-text p {
+    font-size: 1rem;
+  }
+  
+  .color-circle {
+    width: 45px;
+    height: 45px;
+  }
+  
+  .dresscode-colors {
+    gap: 0.8rem;
+  }
+}
+
+.dresscode-image {
+  margin-top: 2rem;
+  display: flex;
+  justify-content: center;
+}
+
+.dresscode-img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 0;
+}
+
+/* Адаптация для мобильных */
+@media (max-width: 600px) {
+  .dresscode-image {
+    margin-top: 1.5rem;
+  }
+  
+  .dresscode-img {
+    width: 80%;
+  }
+}
+
+/* ========== ШЕСТАЯ СЕКЦИЯ: RSVP ========== */
+.rsvp-section {
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 3rem 1.5rem;
+  overflow-x: hidden;
+}
+
+.rsvp-container {
+  max-width: 550px;
+  width: 100%;
+  margin: 0 auto;
+}
+
+.rsvp-title {
+  font-family: 'Playfair Display', 'Cormorant Garamond', serif;
+  font-size: 2.5rem;
+  font-weight: 400;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  color: #7a6a5c;
+  text-align: center;
+  margin-bottom: 2.5rem;
+  word-spacing: 0.2em;
+}
+
+/* Форма */
+.rsvp-form {
+  width: 100%;
+}
+
+.form-group {
+  margin-bottom: 1.8rem;
+}
+
+.form-label {
+  display: block;
+  font-family: 'Playfair Display', serif;
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: #a08d7c;
+  margin-bottom: 0.3rem;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+
+/* Стиль полей ввода — только линия */
+.form-input,
+.form-textarea {
+  width: 100%;
+  padding: 0.5rem 0;
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.1rem;
+  color: #2c2c2c;
+  background: transparent;
+  border: none;
+  border-bottom: 1px solid #e2dcd5;
+  transition: all 0.3s ease;
+}
+
+.form-input:focus,
+.form-textarea:focus {
+  outline: none;
+  border-bottom-color: #b8a99a;
+}
+
+.form-textarea {
+  resize: vertical;
+  min-height: 80px;
+}
+
+/* Radio и Checkbox стили */
+.radio-group,
+.checkbox-group {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.2rem;
+  margin-top: 0.5rem;
+}
+
+.radio-label,
+.checkbox-label {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1rem;
+  color: #2c2c2c;
+  cursor: pointer;
+}
+
+.radio-input,
+.checkbox-input {
+  display: none;
+}
+
+.radio-custom,
+.checkbox-custom {
+  width: 18px;
+  height: 18px;
+  border: 1px solid #b8a99a;
+  display: inline-block;
+  position: relative;
+  background: transparent;
+}
+
+.radio-custom {
+  border-radius: 50%;
+}
+
+.radio-input:checked + .radio-custom::after {
+  content: '';
+  width: 10px;
+  height: 10px;
+  background-color: #b8a99a;
+  border-radius: 50%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.checkbox-input:checked + .checkbox-custom::after {
+  content: '✓';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: #b8a99a;
+  font-size: 12px;
+}
+
+/* Кнопка отправки */
+.form-submit {
+  width: 100%;
+  padding: 1rem;
+  font-family: 'Playfair Display', serif;
+  font-size: 1rem;
+  font-weight: 500;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: white;
+  background-color: #b8a99a;
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  margin-top: 1.5rem;
+}
+
+.form-submit:hover {
+  background-color: #a08d7c;
+}
+
+/* Сообщение об успехе */
+.rsvp-success {
+  text-align: center;
+  padding: 2rem;
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.2rem;
+  color: #b8a99a;
+  background: transparent;
+}
+
+/* Адаптация для мобильных */
+@media (max-width: 600px) {
+  .rsvp-section {
+    padding: 2rem 1rem;
+  }
+  
+  .rsvp-title {
+    font-size: 2rem;
+    margin-bottom: 2rem;
+  }
+  
+  .form-label {
+    font-size: 0.8rem;
+  }
+  
+  .form-input,
+  .form-textarea {
+    font-size: 1rem;
+  }
+  
+  .radio-group,
+  .checkbox-group {
+    gap: 0.8rem;
+  }
+  
+  .form-submit {
+    padding: 0.8rem;
+    font-size: 0.9rem;
+  }
+}
