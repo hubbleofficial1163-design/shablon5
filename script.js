@@ -51,14 +51,6 @@ document.addEventListener('DOMContentLoaded', () => {
   if (dateElement && dateElement.innerText.trim() === '01.08.2026') {
     dateElement.setAttribute('datetime', '2026-08-01');
   }
-
-  // В самом начале DOMContentLoaded:
-window.scrollTo(0, 0);
-
-// И добавьте этот обработчик:
-window.addEventListener('resize', () => {
-  setTimeout(() => window.scrollTo(0, 0), 50);
-});
 });
 
 // Проверка календаря
@@ -68,5 +60,3 @@ setTimeout(() => {
     console.log('✓ Календарь загружен, дата 1 августа 2026 выделена');
   }
 }, 500);
-
-
