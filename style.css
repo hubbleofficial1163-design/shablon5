@@ -59,6 +59,8 @@ body::before {
   overflow-x: hidden;
   position: relative;
   z-index: 1;
+    padding-top: env(safe-area-inset-top, 20px);
+  padding-bottom: env(safe-area-inset-top, 20px);
 }
 
 /* контейнер hero — центрирование */
