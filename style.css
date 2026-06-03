@@ -19,18 +19,33 @@ body {
 body::before {
   content: '';
   position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;      /* fallback для старых браузеров */
-  height: 100svh;    /* стабильная высота без дерганья */
+
+  top: -50px;
+  left: -50px;
+  right: -50px;
+  bottom: -50px;
+
   background-image: url('fon.jpg');
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
+
   z-index: -1;
-  -webkit-transform: translateZ(0);
-  transform: translateZ(0);
+}body::before {
+  content: '';
+  position: fixed;
+
+  top: -50px;
+  left: -50px;
+  right: -50px;
+  bottom: -50px;
+
+  background-image: url('fon.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+
+  z-index: -1;
 }
 
 /* Hero секция — прозрачный фон */
